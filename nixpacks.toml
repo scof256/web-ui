@@ -1,13 +1,11 @@
 # nixpacks.toml
 
-
-
 [phases.install]
   cmds = ["pip install -r requirements.txt"]
 
-[phases.chromium]
+[phases.playwright]
   dependsOn = ["install"]
-  cmds = ["playwright install --with-deps chromium"]
+  cmds = ["playwright install --with-deps"]
 
 [start]
 cmd = "gunicorn app:webui"
